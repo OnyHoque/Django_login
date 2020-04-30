@@ -1,0 +1,51 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+            <div class="fadeIn first">
+                <h3>
+                    Signup page
+                </h3>
+            </div>
+
+            <!-- Login Form -->
+            <form method="POST" enctype="multipart/form-data">
+                <input type="text" class="fadeIn second" name="name" placeholder="Enter name">
+
+                <input type="text" class="fadeIn second" name="userid" placeholder="Enter userid">
+
+                <input type="text" class="fadeIn second" name="email" placeholder="Enter email">
+
+                <input type="text" class="fadeIn second" name="password1" placeholder="Enter password">
+                
+                <input type="text" class="fadeIn second" name="password2" placeholder="Enter password again"> 
+
+                <input type="submit" class="fadeIn fourth"  name="btn" value="Signup">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="login">Already have an account?</a>
+                <a class="underlineHover" href="#" style="padding-left:10px;">Forgot password?</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

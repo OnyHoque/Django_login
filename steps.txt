@@ -1,0 +1,58 @@
+=======================================================================
+================================== 1 ==================================
+=======================================================================
+Create a urls.py file inside app
+Paste the following part:
+
+
+########
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.login, name='login'),
+    # path('add', views.add, name='add')
+]
+#########
+
+=======================================================================
+================================== 2 ==================================
+=======================================================================
+Go to original home directory which has urls.py and include links to new app urls.py
+
+####
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('login',include('login.urls'))
+]
+####
+
+=======================================================================
+================================== 3 ==================================
+=======================================================================
+insert app name in INSTALLED_APPS list of settings.py file
+
+'login',
+
+
+=======================================================================
+================================== 4 ==================================
+=======================================================================
+For static folder create a 'static' folder at root directory.
+Add the following command at the end of the settings.py file
+
+####
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+####
+
+use the following system to reference files:
+
+####
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+####
+
